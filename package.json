@@ -1,0 +1,25 @@
+{
+  "name": "nikosharp",
+  "displayName": "NikoSharp",
+  "description": "NikoSharp Programming Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "nikos",
+      "aliases": ["NikoSharp Programming Language", "nikos"],
+      "extensions": [".nikos", ".nks"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "nikos",
+      "scopeName": "source.nikos",
+      "path": "./syntaxes/nikos.tmLanguage.json"
+    }]
+  }
+}
