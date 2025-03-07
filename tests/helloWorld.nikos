@@ -1,0 +1,3 @@
+#program defined in s'helloWorld.nikosproj'
+
+std::out(s'Hello World')
