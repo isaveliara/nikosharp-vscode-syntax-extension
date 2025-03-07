@@ -1,3 +1,24 @@
+-- Definições no ambiente de scripting
 #program defined in s'helloWorld.nikosproj'
 
-std::out(s'Hello World')
+
+-- Amostra ai
+if (true == false || 14+1 == 15) do
+    std::out(s'Hello World')
+else
+    exit
+end
+
+-- Repetir 10 vezes o código
+poeng (10) out iterador do
+    std::out(s'loopano em ${iterador}')
+end
+
+-- Loopar infinitamente, fechando o programa assim que i chegar em 100.
+Int i = (0)
+while (true) do
+    std::out(s'${i= i+1}')
+    if (i == 100) do
+        exit
+    end
+end

@@ -1,32 +1,97 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "NikoSharp Programming Language",
+	"scopeName": "source.nikos",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
+		{ "include": "#keywords" },
+		{ "include": "#keywords2" },
+		{ "include": "#strings" },
+		{ "include": "#comments" },
+		{ "include": "#numbers" },
+		{ "include": "#operators" },
+		{ "include": "#properties" },
+		{ "include": "#types" },
+		{ "include": "#variables" },
+		{ "include": "#placeholders" },
+		{ "include": "#brackets" },
+		{ "include": "#dot" },
+		{ "include": "#identifiers" },
+		{ "include": "#remaining" }
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.nikos",
-				"match": "\\b(if|else|while|for|return|do|end|exit|goto|include)\\b"
+				"match": "\\b(if|else|do|end|while|for|exit|include|goto|out)\\b"
 			}]
 		},
 		"strings": {
 			"name": "string.quoted.double.nikos",
 			"begin": "s'",
 			"end": "'",
+			"patterns": [{
+				"name": "constant.character.escape.nikos",
+				"match": "\\\\."
+			}]
+		},
+		"comments": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.nikos",
-					"match": "\\\\."
+					"name": "comment.line.double-dash.nikos",
+					"match": "--[^\n]*"
+				},
+				{
+					"name": "comment.block.nikos",
+					"begin": "--\\[\\[",
+					"end": "\\]\\]",
+					"patterns": [
+						{
+							"name": "comment.block.contents.nikos",
+							"match": "."
+						}
+					]
 				}
 			]
+		},
+		"numbers": {
+			"name": "constant.numeric.nikos",
+			"match": "\\b\\d+\\.?\\d*\\b"
+		},
+		"operators": {
+			"name": "keyword.operator.nikos",
+			"match": "->|::|>=|<=|==|~=|\\+\\+|\\-\\-|&&|\\|\\||[+\\-*/?!;,#|><=~]"
+		},
+		"properties": {
+			"name": "entity.name.property.nikos",
+			"match": "::\\s*\\w+"
+		},
+		"types": {
+			"name": "support.type.nikos",
+			"match": "\\b(Str|Int|Float|Error|Nil|List|Dict|User|Char|Any)\\b"
+		},
+		"variables": {
+			"name": "variable.other.nikos",
+			"match": "\\$\\{\\w+\\}"
+		},
+		"placeholders": {
+			"name": "constant.language.placeholder.nikos",
+			"match": "&\\{\\w+\\}"
+		},
+		"brackets": {
+			"name": "punctuation.bracket.nikos",
+			"match": "[\\[\\](){}]"
+		},
+		"dot": {
+			"name": "punctuation.dot.nikos",
+			"match": "\\.(?=\\s|$)"
+		},
+		"identifiers": {
+			"name": "variable.nikos",
+			"match": "[a-zA-Z_]\\w*"
+		},
+		"remaining": {
+			"name": "meta.remaining.nikos",
+			"match": "."
 		}
-	},
-	"scopeName": "source.nikos"
+	}
 }
