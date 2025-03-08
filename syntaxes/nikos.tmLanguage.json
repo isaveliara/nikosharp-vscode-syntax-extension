@@ -55,7 +55,7 @@
 		},
 		"types": {
 			"name": "support.type.nikos",
-			"match": "\\b(Str|Int|Float|false|true|Error|Nil|List|Dict|User|Char|Any)\\b"
+			"match": "\\b(Str|Bool|Int|Float|false|true|Error|Nil|List|Dict|User|Char|Any)\\b"
 		},
 		"identifiers": {
 			"name": "variable.nikos",

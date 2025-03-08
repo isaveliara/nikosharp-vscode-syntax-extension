@@ -1,0 +1,39 @@
+-- Definições no ambiente de scripting
+#program located s'helloWorld.nikosproj'
+
+Bool iWantExecuteThis = (true)
+
+-- If-else statement (executes the code if the condition on parenthesis is evaluated as true. If the condition is false, can be handled in else statement, inside the if)
+if (${iWantExecuteThis}) do
+    std::out(s'This will be executed.')
+else
+    std::out(s'This will not be executed because the expression was satisfied.')
+end
+
+
+-- Loops
+-- out [variable name] is not required in while/poeng statements.
+-- This just store the repetition number of the loop. (starts in 1)
+
+-- While statement (executes the code while the condition on parenthesis is evaluated as true)
+while (${iWantExecuteThis}) out i do
+    std::out(s'Running infinitely..')
+end
+
+-- Poeng statement (repeats the code)
+poeng (3) do
+    std::out(s'123123')
+end
+
+-- For statement
+-- The for statement needs an iterator, a value that can be iterated.
+-- Example of value:
+List iterator1 = ({s'apple', s'banana', s'cookie'})
+for (iterator1) out iterated do
+    if (${iterated} == s'apple' || ${iterated} == s'banana') do
+        std::out(s'${iterated} - This is a fruit.')
+    else
+        std::out(s'${iterated} - This is not a fruit.')
+    end
+end
+
