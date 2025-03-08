@@ -32,7 +32,7 @@
       },
       {
         "scope": "keyword.control.nikos",
-        "settings": { "foreground": "#c678dd", "fontStyle": "bold" }
+        "settings": { "foreground": "#e06c75", "fontStyle": "bold" }
       },
       {
         "scope": "keyword.operator.nikos",
@@ -44,11 +44,11 @@
       },
       {
         "scope": "support.type.nikos",
-        "settings": { "foreground": "#e228a4" }
+        "settings": { "foreground": "#d88de7" }
       },
       {
         "scope": "variable.nikos",
-        "settings": { "foreground": "#e06c75" }
+        "settings": { "foreground": "#e0ddde" }
       },
       {
         "scope": "constant.numeric.nikos",

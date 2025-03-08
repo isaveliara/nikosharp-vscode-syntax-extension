@@ -41,7 +41,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.nikos",
-				"matc5h": "\\b(if|else|do|end|while|for|exit|include|goto|out)\\b"
+				"match": "\\b(if|else|do|end|while|for|poeng|return|break|exit|include|goto|out)\\b"
 			}]
 		},
 		"strings": {
@@ -53,6 +53,14 @@
 				"match": "\\\\."
 			}]
 		},
+		"types": {
+			"name": "support.type.nikos",
+			"match": "\\b(Str|Int|Float|false|true|Error|Nil|List|Dict|User|Char|Any)\\b"
+		},
+		"identifiers": {
+			"name": "variable.nikos",
+			"match": "\\b[a-zA-Z_]\\w*\\b(?!\\s*::)"
+		},
 		"numbers": {
 			"name": "constant.numeric.nikos",
 			"match": "\\b\\d+\\.?\\d*\\b"
@@ -62,12 +70,16 @@
 			"match": "->|::|>=|<=|==|~=|\\+\\+|\\-\\-|&&|\\|\\||[+\\-*/?!;,#|><=~]"
 		},
 		"properties": {
-			"name": "entity.name.property.nikos",
-			"match": "::\\s*\\w+"
-		},
-		"types": {
-			"name": "support.type.nikos",
-			"match": "\\b(Str|Int|Float|Error|Nil|List|Dict|User|Char|Any)\\b"
+			"patterns": [
+				{
+					"name": "variable.nikos",
+					"match": "\\b[a-zA-Z_]\\w*(?=::)"
+				},
+				{
+					"name": "entity.name.property.nikos",
+					"match": "(?<=::)\\s*\\w+"
+				}
+			]
 		},
 		"variables": {
 			"name": "variable.other.nikos",
@@ -84,10 +96,6 @@
 		"dot": {
 			"name": "punctuation.dot.nikos",
 			"match": "\\.(?=\\s|$)"
-		},
-		"identifiers": {
-			"name": "variable.nikos",
-			"match": "[a-zA-Z_]\\w*"
 		},
 		"remaining": {
 			"name": "meta.remaining.nikos",
