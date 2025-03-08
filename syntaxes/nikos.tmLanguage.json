@@ -19,21 +19,6 @@
 		{ "include": "#remaining" }
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.nikos",
-				"match": "\\b(if|else|do|end|while|for|exit|include|goto|out)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.nikos",
-			"begin": "s'",
-			"end": "'",
-			"patterns": [{
-				"name": "constant.character.escape.nikos",
-				"match": "\\\\."
-			}]
-		},
 		"comments": {
 			"patterns": [
 				{
@@ -52,6 +37,21 @@
 					]
 				}
 			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.nikos",
+				"matc5h": "\\b(if|else|do|end|while|for|exit|include|goto|out)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.nikos",
+			"begin": "s'",
+			"end": "'",
+			"patterns": [{
+				"name": "constant.character.escape.nikos",
+				"match": "\\\\."
+			}]
 		},
 		"numbers": {
 			"name": "constant.numeric.nikos",
